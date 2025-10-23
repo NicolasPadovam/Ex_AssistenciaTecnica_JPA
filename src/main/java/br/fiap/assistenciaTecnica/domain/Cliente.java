@@ -3,8 +3,9 @@ package br.fiap.assistenciaTecnica.domain;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "JAVA_CLIENTE")
+@Table(name = "JAVA_CLIENTE") //table name e o nome da classe devem ter o mesmo nome
 public class Cliente {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_CLIENTE")

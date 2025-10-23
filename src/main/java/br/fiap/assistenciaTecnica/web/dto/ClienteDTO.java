@@ -1,12 +1,17 @@
 package br.fiap.assistenciaTecnica.web.dto;
 
+import lombok.Data;
+import lombok.Getter;
+//@Data
+// Lombok faz o get, set e as outros metodos padrões
+
+// Serve para transitar entre o controller e o service
 public class ClienteDTO {
     private Long id;
     private String nome;
     private String email;
     private String telefone;
     private String senha;
-
 
     public Long getId() {
         return id;
