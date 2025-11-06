@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping ("/equipamento")
+@RequestMapping("/equipamento")
 public class EquipamentoController {
     private final EquipamentoService service;
 
@@ -17,9 +17,8 @@ public class EquipamentoController {
         this.service = service;
     }
 
-
     @PostMapping
-    public Equipamento cadastrar(@RequestBody EquipamentoDTO dto){
-
+    public Equipamento cadastrar(@RequestBody EquipamentoDTO dto) {
+        return service.cadastrar(dto);
     }
 }

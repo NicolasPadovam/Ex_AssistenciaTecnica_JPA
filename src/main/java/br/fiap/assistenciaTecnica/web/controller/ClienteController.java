@@ -1,6 +1,8 @@
 package br.fiap.assistenciaTecnica.web.controller;
 
 import br.fiap.assistenciaTecnica.domain.Cliente;
+import br.fiap.assistenciaTecnica.domain.Equipamento;
+import br.fiap.assistenciaTecnica.repository.EquipamentoRepository;
 import br.fiap.assistenciaTecnica.service.ClienteService;
 import br.fiap.assistenciaTecnica.web.dto.ClienteDTO;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +21,6 @@ public class ClienteController {
         this.service = service;
     }
 
-
     @PostMapping
     //requestbody -> vai quebrar o JSON e transformar em ClienteDTO
     public Cliente cadastrar(@RequestBody ClienteDTO clienteDTO){
@@ -37,6 +38,11 @@ public class ClienteController {
     //PathVariable -  pega o numero da url e atibui a este metodo
     public Cliente buscarPorId(@PathVariable Long id){
         return service.buscarPorId(id);
+    }
+
+    @GetMapping("/{id}/equipamento")
+    public List<Equipamento> listarEquipamentoPorCliente(@PathVariable Long id){
+        return service.listarEquipamentoPorCliente(id);
     }
 
 }
